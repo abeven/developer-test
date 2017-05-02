@@ -183,17 +183,21 @@
     <Compile Include="Controllers\Offers\Commands\RejectOfferCommandHandler.cs" />
     <Compile Include="Controllers\Offers\OffersController.cs" />
     <Compile Include="Controllers\Offers\ViewModels\OffersOnPropertyViewModel.cs" />
+    <Compile Include="Controllers\Property\Builders\BookAppointmentViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Builders\MakeOfferViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Builders\MyPropertiesViewModelBuilder.cs" />
     <Compile Include="Controllers\Property\Builders\PropertiesQuery.cs" />
     <Compile Include="Controllers\Property\Builders\PropertiesViewModelBuilder.cs" />
+    <Compile Include="Controllers\Property\Commands\BookAppointmentCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\CreatePropertyCommand.cs" />
     <Compile Include="Controllers\Property\Commands\CreatePropertyCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\ListPropertyCommand.cs" />
     <Compile Include="Controllers\Property\Commands\ListPropertyCommandHandler.cs" />
     <Compile Include="Controllers\Property\Commands\MakeOfferCommand.cs" />
     <Compile Include="Controllers\Property\Commands\MakeOfferCommandHandler.cs" />
+    <Compile Include="Controllers\Property\Commands\BookAppointmentCommand.cs" />
     <Compile Include="Controllers\Property\PropertyController.cs" />
+    <Compile Include="Controllers\Property\ViewModels\BookAppointmentViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\CreatePropertyViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\MakeOfferViewModel.cs" />
     <Compile Include="Controllers\Property\ViewModels\MyPropertiesViewModel.cs" />
@@ -235,9 +239,14 @@
     <Compile Include="Migrations\201705021749438_AddOfferBuyerUserIdAndPropertyId.Designer.cs">
       <DependentUpon>201705021749438_AddOfferBuyerUserIdAndPropertyId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201705022058053_AddAppointmentModel.cs" />
+    <Compile Include="Migrations\201705022058053_AddAppointmentModel.Designer.cs">
+      <DependentUpon>201705022058053_AddAppointmentModel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\OfferStatus.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
@@ -300,6 +309,7 @@
     <Content Include="Views\Offers\OnProperty.cshtml" />
     <None Include="Views\Account\UnAuthorized.cshtml" />
     <Content Include="Views\Buyer\MyProperties.cshtml" />
+    <Content Include="Views\Property\BookAppointment.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -334,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201705021749438_AddOfferBuyerUserIdAndPropertyId.resx">
       <DependentUpon>201705021749438_AddOfferBuyerUserIdAndPropertyId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705022058053_AddAppointmentModel.resx">
+      <DependentUpon>201705022058053_AddAppointmentModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

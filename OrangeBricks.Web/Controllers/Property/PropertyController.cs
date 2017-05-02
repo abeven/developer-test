@@ -93,5 +93,32 @@ namespace OrangeBricks.Web.Controllers.Property
 
             return RedirectToAction("Index");
         }
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult BookAppointment(int id)
+        {
+            var builder = new BookAppointmentViewModelBuilder(_context);
+            var viewModel = builder.Build(id);
+            return View(viewModel);
+        }
+
+
+        [HttpPost]
+        [OrangeBricksAuthorize(Roles = "Buyer")]
+        public ActionResult BookAppointment(BookAppointmentCommand command)
+        {
+            if (!ModelState.IsValid)
+            {
+                var builder = new BookAppointmentViewModelBuilder(_context);
+                return View(builder.Build(command.PropertyId));
+            }
+
+            var handler = new BookAppointmentCommandHandler(_context);
+
+            command.BuyerUserId = User.Identity.GetUserId();
+
+            handler.Handle(command);
+
+            return RedirectToAction("Index");
+        }
     }
 }

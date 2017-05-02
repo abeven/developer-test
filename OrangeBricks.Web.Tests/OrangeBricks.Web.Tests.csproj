@@ -98,7 +98,9 @@
   <ItemGroup>
     <Compile Include="Controllers\Buyer\Builders\BuyerPropertiesViewModelBuilderTest.cs" />
     <Compile Include="Controllers\Extensions.cs" />
+    <Compile Include="Controllers\Property\Builders\BookAppointmentViewModelBuilderTests.cs" />
     <Compile Include="Controllers\Property\Builders\PropertiesViewModelBuilderTest.cs" />
+    <Compile Include="Controllers\Property\Commands\BookAppointmentCommandHandlerTest.cs" />
     <Compile Include="Controllers\Property\Commands\CreatePropertyCommandHandlerTest.cs" />
     <Compile Include="Controllers\Property\Commands\ListPropertyCommandHandlerTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
