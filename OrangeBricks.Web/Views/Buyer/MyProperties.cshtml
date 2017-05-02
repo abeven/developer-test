@@ -1,0 +1,23 @@
+﻿@model OrangeBricks.Web.Controllers.Buyer.ViewModels.BuyerPropertiesViewModel
+
+@{
+    ViewBag.Title = "My Properties";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>My Faves</h2>
+
+<p>Here is a list of properties you have expressed interest in:</p>
+
+@foreach (var property in Model.Properties)
+{
+    <hr />
+    <h3>@property.StreetName</h3>
+    <p>@property.NumberOfBedrooms bedroom @property.PropertyType</p>
+    if(property.HasOffer)
+    {
+        <h3>Offer</h3>
+        <hr/>
+        <p>@property.Offer.Amount on @property.Offer.CreatedAt (@property.Offer.Status)</p>
+    }
+}
